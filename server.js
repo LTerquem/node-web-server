@@ -29,7 +29,6 @@ hbs.registerHelper("getCurrentYear", () => {
 app.get("/", (req, res) => {
 	res.render("home.hbs", {
 		pageTitle: "Home Page",
-		currentYear: new Date().getFullYear(),
 		welcomeMessage: "Welcome to my website wooooooh!"
 	})
 })
@@ -43,7 +42,11 @@ app.get("/bad", (req, res) => {
 app.get("/about", (req, res) => {
 	res.render("about.hbs", {
 		pageTitle: "About Page",
-		currentYear: new Date().getFullYear()
 	});
 })
+app.get("/projects", (req, res) => {
+	res.render("projects.hbs", {
+		pageTitle: "My Projects"
+	});
+});
 app.listen(port, () => console.log(`Server is up and running on port ${port}`));
